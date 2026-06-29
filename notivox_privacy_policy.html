@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Notivox</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0F172A;
+      --surface:   #1E293B;
+      --card:      #1E293B;
+      --border:    #1E3A5F;
+      --primary:   #3B82F6;
+      --primary2:  #1D4ED8;
+      --text:      #F8FAFC;
+      --muted:     #94A3B8;
+      --success:   #22C55E;
+      --radius:    14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #1E293B, #0F172A);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .app-icon span { color: var(--primary); font-weight: 400; font-size: 16px; }
+    .header-text h1 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .header-text p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── Main layout ─────────────────────────────────── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── Hero ────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #162032, #0F172A);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 520px;
+      margin: 0 auto 20px;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34,197,94,0.12);
+      border: 1px solid rgba(34,197,94,0.30);
+      color: #4ADE80;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+    .badge::before {
+      content: '✓';
+      font-weight: 700;
+    }
+
+    /* ── Section headings ────────────────────────────── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin: 40px 0 14px;
+    }
+
+    /* ── Cards ───────────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .card-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px;
+      border-bottom: 1px solid rgba(30,58,95,0.6);
+    }
+    .card-item:last-child { border-bottom: none; }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .card-body h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .card-body p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Data table ──────────────────────────────────── */
+    .data-table {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .data-table-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: rgba(59,130,246,0.08);
+      padding: 12px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 14px 20px;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(30,58,95,0.5);
+      align-items: center;
+    }
+    .data-table-row:last-child { border-bottom: none; }
+    .data-table-row .col-type { color: var(--text); font-weight: 500; }
+    .data-table-row .col-collected { color: #4ADE80; font-weight: 600; }
+    .data-table-row .col-shared { color: #4ADE80; font-weight: 600; }
+    .col-no { color: #4ADE80 !important; }
+
+    /* ── Permission table ────────────────────────────── */
+    .perm-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(30,58,95,0.5);
+    }
+    .perm-row:last-child { border-bottom: none; }
+    .perm-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .perm-badge.optional {
+      background: rgba(59,130,246,0.15);
+      color: #60A5FA;
+      border: 1px solid rgba(59,130,246,0.30);
+    }
+    .perm-badge.none {
+      background: rgba(34,197,94,0.12);
+      color: #4ADE80;
+      border: 1px solid rgba(34,197,94,0.25);
+    }
+    .perm-info h4 { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+    .perm-info p  { font-size: 12px; color: var(--muted); }
+
+    /* ── Info rows ───────────────────────────────────── */
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(30,58,95,0.5);
+      font-size: 13px;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-row .label { color: var(--muted); }
+    .info-row .value { color: var(--text); font-weight: 500; text-align: right; }
+
+    /* ── Prose ───────────────────────────────────────── */
+    .prose {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .prose p { margin-bottom: 10px; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { color: var(--text); font-weight: 600; }
+
+    /* ── Contact card ────────────────────────────────── */
+    .contact-card {
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      margin-top: 12px;
+    }
+    .contact-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .contact-card p  { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+    .contact-card a  {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 10px;
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 540px) {
+      .data-table-header,
+      .data-table-row { grid-template-columns: 1fr 80px 80px; }
+      .hero { padding: 24px 18px; }
+      .hero h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="app-icon">N<span>v</span></div>
+    <div class="header-text">
+      <h1>Notivox</h1>
+      <p>Privacy Policy</p>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main ────────────────────────────────────────────── -->
+<main>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h2>Your Privacy is Protected</h2>
+    <p>Notivox is a fully offline notes app. We do not collect, store, or share any personal data — ever.</p>
+    <div class="badge-row">
+      <span class="badge">No Data Collected</span>
+      <span class="badge">No Internet Required</span>
+      <span class="badge">No Account Needed</span>
+      <span class="badge">No Ads</span>
+      <span class="badge">No Tracking</span>
+    </div>
+  </div>
+
+  <!-- 1. App Overview -->
+  <p class="section-label">1. App Overview</p>
+  <div class="prose">
+    <p><strong>App Name:</strong> Notivox</p>
+    <p><strong>Package:</strong> com.notivox.app</p>
+    <p><strong>Type:</strong> Productivity — Notes App</p>
+    <p>Notivox is a local-only note-taking app that allows users to create, edit, search, and delete notes. All data is stored exclusively on the user's device using local storage. The app does not require an internet connection and does not communicate with any external server, API, or cloud service.</p>
+  </div>
+
+  <!-- 2. Data Collection -->
+  <p class="section-label">2. Data We Collect — Google Play Data Safety</p>
+  <div class="data-table">
+    <div class="data-table-header">
+      <span>Data Type</span>
+      <span>Collected</span>
+      <span>Shared</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Personal Info (name, email)</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Financial Info</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Health &amp; Fitness</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Messages / Notes Content</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Photos / Videos / Files</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Audio</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Location</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Contacts</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">App Activity / Usage</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Device / Other IDs</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+    <div class="data-table-row">
+      <span class="col-type">Crash Logs / Diagnostics</span>
+      <span class="col-no">No</span>
+      <span class="col-no">No</span>
+    </div>
+  </div>
+  <div class="prose">
+    <p>We confirm that <strong>no data is collected or shared with third parties</strong>. All notes are stored locally on your device using Hive (a local database). This data never leaves your device.</p>
+  </div>
+
+  <!-- 3. Local Storage -->
+  <p class="section-label">3. Local Data Storage</p>
+  <div class="card">
+    <div class="card-item">
+      <div class="card-icon">📱</div>
+      <div class="card-body">
+        <h3>On-Device Only</h3>
+        <p>All notes (title, content, timestamps) are stored using Hive local database on your device's internal storage. No cloud backup, no remote sync.</p>
+      </div>
+    </div>
+    <div class="card-item">
+      <div class="card-icon">🔒</div>
+      <div class="card-body">
+        <h3>No Transmission</h3>
+        <p>Your notes are never uploaded, transmitted, or shared with any server, API, third-party service, or other device.</p>
+      </div>
+    </div>
+    <div class="card-item">
+      <div class="card-icon">🗑️</div>
+      <div class="card-body">
+        <h3>Easy Deletion</h3>
+        <p>You can delete individual notes at any time within the app. Uninstalling Notivox permanently removes all locally stored data from your device.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Permissions -->
+  <p class="section-label">4. App Permissions</p>
+  <div class="card">
+    <div class="perm-row">
+      <span class="perm-badge none">NOT REQUESTED</span>
+      <div class="perm-info">
+        <h4>Internet Access</h4>
+        <p>Notivox does not request internet permission. The app works fully offline.</p>
+      </div>
+    </div>
+    <div class="perm-row">
+      <span class="perm-badge none">NOT REQUESTED</span>
+      <div class="perm-info">
+        <h4>Camera</h4>
+        <p>No camera access is requested or used.</p>
+      </div>
+    </div>
+    <div class="perm-row">
+      <span class="perm-badge none">NOT REQUESTED</span>
+      <div class="perm-info">
+        <h4>Microphone</h4>
+        <p>No microphone access is requested or used.</p>
+      </div>
+    </div>
+    <div class="perm-row">
+      <span class="perm-badge none">NOT REQUESTED</span>
+      <div class="perm-info">
+        <h4>Location</h4>
+        <p>No location data is accessed or used.</p>
+      </div>
+    </div>
+    <div class="perm-row">
+      <span class="perm-badge none">NOT REQUESTED</span>
+      <div class="perm-info">
+        <h4>Contacts / Calendar</h4>
+        <p>No access to contacts, calendar, or any other personal data.</p>
+      </div>
+    </div>
+    <div class="perm-row">
+      <span class="perm-badge optional">OPTIONAL</span>
+      <div class="perm-info">
+        <h4>Storage (Share feature only)</h4>
+        <p>If you use the Share feature to share a note via another app, the system share sheet is invoked. No file is saved by Notivox itself.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Third Parties -->
+  <p class="section-label">5. Third-Party Services</p>
+  <div class="prose">
+    <p>Notivox does <strong>not</strong> integrate any third-party SDKs, analytics tools, advertising networks, crash reporting services, or social media platforms.</p>
+    <p>There are no Firebase, Google Analytics, Facebook SDK, Crashlytics, AdMob, or any similar integrations in this app.</p>
+  </div>
+
+  <!-- 6. Children's Privacy -->
+  <p class="section-label">6. Children's Privacy (COPPA Compliance)</p>
+  <div class="prose">
+    <p>Notivox does not collect any personal information from anyone, including children under the age of 13. The app is safe for all ages as it stores data locally only and has no network communication.</p>
+    <p>This app complies with the <strong>Children's Online Privacy Protection Act (COPPA)</strong> and <strong>Google Play's Families Policy</strong>.</p>
+  </div>
+
+  <!-- 7. Security -->
+  <p class="section-label">7. Data Security</p>
+  <div class="card">
+    <div class="card-item">
+      <div class="card-icon">🛡️</div>
+      <div class="card-body">
+        <h3>No Network = No Risk</h3>
+        <p>Because no data ever leaves your device, there is no risk of data breach, unauthorized server access, or data interception in transit.</p>
+      </div>
+    </div>
+    <div class="card-item">
+      <div class="card-icon">📦</div>
+      <div class="card-body">
+        <h3>Local Database (Hive)</h3>
+        <p>Notes are stored using the Hive NoSQL database which operates entirely within the app's sandboxed local storage on Android.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. User Rights -->
+  <p class="section-label">8. Your Rights &amp; Data Control</p>
+  <div class="card">
+    <div class="info-row">
+      <span class="label">Access your data</span>
+      <span class="value">All your notes are visible in the app at all times</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Edit your data</span>
+      <span class="value">Edit any note anytime</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Delete your data</span>
+      <span class="value">Delete individual notes or all notes in the app</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Complete deletion</span>
+      <span class="value">Uninstall the app to permanently erase everything</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Data portability</span>
+      <span class="value">Use the Share feature to export note content</span>
+    </div>
+  </div>
+
+  <!-- 9. GDPR -->
+  <p class="section-label">9. GDPR &amp; International Privacy Laws</p>
+  <div class="prose">
+    <p>Since Notivox collects no personal data, it is inherently compliant with the <strong>General Data Protection Regulation (GDPR)</strong>, <strong>California Consumer Privacy Act (CCPA)</strong>, and other regional privacy laws.</p>
+    <p>No consent banners, cookie notices, or opt-outs are required because no data processing occurs.</p>
+  </div>
+
+  <!-- 10. Changes -->
+  <p class="section-label">10. Changes to This Policy</p>
+  <div class="prose">
+    <p>We may update this Privacy Policy if the app's functionality changes. Any updates will be posted on this page with an updated effective date. We encourage you to review this page periodically.</p>
+    <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <!-- 11. App Info -->
+  <p class="section-label">11. App Information</p>
+  <div class="card">
+    <div class="info-row">
+      <span class="label">App Name</span>
+      <span class="value">Notivox</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Version</span>
+      <span class="value">1.0.0</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Platform</span>
+      <span class="value">Android (Google Play Store)</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Category</span>
+      <span class="value">Productivity</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Effective Date</span>
+      <span class="value">June 29, 2025</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Last Updated</span>
+      <span class="value">June 29, 2025</span>
+    </div>
+  </div>
+
+  <!-- 12. Contact -->
+  <p class="section-label">12. Contact Us</p>
+  <div class="contact-card">
+    <h3>Questions about this Privacy Policy?</h3>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us.</p>
+    <a href="mailto:support@notivox.app">support@notivox.app</a>
+  </div>
+
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 Notivox. All rights reserved.</p>
+  <p style="margin-top:6px;">This app does not collect any personal data. All notes are stored locally on your device only.</p>
+</footer>
+
+</body>
+</html>
